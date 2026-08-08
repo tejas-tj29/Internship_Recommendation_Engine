@@ -1,0 +1,99 @@
+@import "tailwindcss";
+
+@theme {
+  --color-blue-50: var(--blue-50);
+  --color-blue-100: var(--blue-100);
+  --color-blue-200: var(--blue-200);
+  --color-blue-300: var(--blue-300);
+  --color-blue-400: var(--blue-400);
+  --color-blue-500: var(--blue-500);
+  --color-blue-600: var(--blue-600);
+  --color-blue-700: var(--blue-700);
+  --color-blue-800: var(--blue-800);
+  --color-blue-900: var(--blue-900);
+  --color-blue-950: var(--blue-950);
+
+  --color-gray-50: var(--gray-50);
+  --color-gray-100: var(--gray-100);
+  --color-gray-200: var(--gray-200);
+  --color-gray-300: var(--gray-300);
+  --color-gray-400: var(--gray-400);
+  --color-gray-500: var(--gray-500);
+  --color-gray-600: var(--gray-600);
+  --color-gray-700: var(--gray-700);
+  --color-gray-800: var(--gray-800);
+  --color-gray-900: var(--gray-900);
+  --color-gray-950: var(--gray-950);
+  
+  --color-white: var(--theme-white);
+  --color-black: var(--theme-black);
+}
+
+:root {
+  /* Green Theme mapped to Blue (Light Mode) */
+  --blue-50: #f1f6ec;
+  --blue-100: #e2ead9;
+  --blue-200: #c8d7bd;
+  --blue-300: #a2b18e;   /* Light Green from palette */
+  --blue-400: #81997d;
+  --blue-500: #618366;   /* Mid Green from palette */
+  --blue-600: #4b6d51;   /* Primary Action Green */
+  --blue-700: #395540;
+  --blue-800: #245041;   /* Dark Green from palette */
+  --blue-900: #1c3a30;
+  --blue-950: #0f221c;
+
+  /* Slate Theme mapped to Gray (Light Mode) */
+  --gray-50: #f7f9fa;
+  --gray-100: #ecf1f4;
+  --gray-200: #d5e0e6;
+  --gray-300: #b3c5ce;
+  --gray-400: #8ba3af;
+  --gray-500: #6b8493;
+  --gray-600: #546977;
+  --gray-700: #455562;
+  --gray-800: #394751;
+  --gray-900: #1f2a31;   /* Darkest Slate from palette */
+  --gray-950: #131b20;
+
+  --theme-white: #ffffff;
+  --theme-black: #000000;
+  
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+
+    /* Invert Gray scale for automatic dark mode */
+    --gray-50: #131b20;   /* Darkest slate */
+    --gray-100: #1f2a31;  /* Dark slate from palette */
+    --gray-200: #2c3a44;  
+    --gray-300: #394751;  
+    --gray-400: #455562;  
+    --gray-500: #6b8493;  
+    --gray-600: #8ba3af;  
+    --gray-700: #b3c5ce;  
+    --gray-800: #d5e0e6;  
+    --gray-900: #f7f9fa;  
+    --gray-950: #ffffff;  
+
+    /* Re-map white to darkest slate */
+    --theme-white: #131b20; 
+    --theme-black: #ffffff; 
+    
+    /* Slightly brighten the brand colors for dark mode contrast */
+    --blue-50: #0f221c;
+    --blue-100: #1c3a30;
+    --blue-200: #245041;  /* Dark Green */
+    --blue-300: #395540;
+    --blue-400: #4b6d51;
+    --blue-500: #618366;  /* Mid Green */
+    --blue-600: #81997d;  /* Primary Action Green (lighter for dark mode) */
+    --blue-700: #a2b18e;  /* Light Green */
+    --blue-800: #c8d7bd;
+    --blue-900: #e2ead9;
+    --blue-950: #f1f6ec;
+  }
+}
