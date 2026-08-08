@@ -16,7 +16,6 @@ export function DashboardLayout() {
   const navItems = [
     { name: 'Dashboard', path: '/dashboard', icon: Home },
     { name: 'Saved Internships', path: '/saved-internships', icon: Bookmark },
-    { name: 'Applications', path: '/applications', icon: FileText },
     { name: 'Profile', path: '/onboarding', icon: User }, // Reuse onboarding as profile edit for now
   ];
 
