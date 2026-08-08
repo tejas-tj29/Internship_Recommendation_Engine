@@ -44,7 +44,7 @@ export default function HowItWorks() {
     <div className="min-h-screen flex flex-col font-sans">
       <PublicNavbar />
       
-      <main className="flex-grow">
+      <main className="grow">
         
         {/* Header Section */}
         <section className="bg-blue-600 pt-20 pb-24">

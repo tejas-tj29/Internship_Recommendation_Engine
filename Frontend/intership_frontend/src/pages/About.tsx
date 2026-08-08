@@ -9,7 +9,7 @@ export default function About() {
     <div className="min-h-screen flex flex-col font-sans bg-white">
       <PublicNavbar />
       
-      <main className="flex-grow">
+      <main className="grow">
         
         {/* Header */}
         <section className="bg-blue-50 py-20">

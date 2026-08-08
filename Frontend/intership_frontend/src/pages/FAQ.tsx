@@ -16,7 +16,7 @@ export default function FAQ() {
     <div className="min-h-screen flex flex-col font-sans bg-gray-50">
       <PublicNavbar />
       
-      <main className="flex-grow">
+      <main className="grow">
         
         {/* Header */}
         <section className="bg-blue-600 py-20">
@@ -45,9 +45,9 @@ export default function FAQ() {
                     >
                       <span className="text-lg font-bold text-gray-900 pr-8">{faq.question}</span>
                       {isOpen ? (
-                        <ChevronUp size={24} className="text-blue-600 flex-shrink-0" />
+                        <ChevronUp size={24} className="text-blue-600 shrink-0" />
                       ) : (
-                        <ChevronDown size={24} className="text-gray-400 flex-shrink-0" />
+                        <ChevronDown size={24} className="text-gray-400 shrink-0" />
                       )}
                     </button>
                     {isOpen && (

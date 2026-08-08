@@ -10,9 +10,9 @@ export default function Home() {
     <div className="min-h-screen flex flex-col font-sans">
       <PublicNavbar />
       
-      <main className="flex-grow">
+      <main className="grow">
         {/* 1. HERO SECTION */}
-        <section className="relative pt-20 pb-32 overflow-hidden bg-gradient-to-b from-blue-50 to-white">
+        <section className="relative pt-20 pb-32 overflow-hidden bg-linear-to-b from-blue-50 to-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="text-center max-w-4xl mx-auto">
               <div className="inline-flex items-center px-4 py-2 rounded-full bg-blue-100 text-blue-700 font-medium text-sm mb-8 animate-fade-in-up">
@@ -110,7 +110,7 @@ export default function Home() {
                     'Focus only on internships where you have a high probability of selection'
                   ].map((item, idx) => (
                     <li key={idx} className="flex items-start">
-                      <CheckCircle2 className="text-green-500 mr-3 mt-1 flex-shrink-0" size={20} />
+                      <CheckCircle2 className="text-green-500 mr-3 mt-1 shrink-0" size={20} />
                       <span className="text-gray-700 font-medium">{item}</span>
                     </li>
                   ))}
@@ -119,7 +119,7 @@ export default function Home() {
 
               <div className="w-full lg:w-1/2 relative">
                 {/* Decorative background */}
-                <div className="absolute inset-0 bg-gradient-to-tr from-blue-100 to-purple-50 transform rotate-3 rounded-3xl -z-10"></div>
+                <div className="absolute inset-0 bg-linear-to-tr from-blue-100 to-purple-50 transform rotate-3 rounded-3xl -z-10"></div>
                 
                 {/* Mock Card */}
                 <div className="bg-white rounded-2xl shadow-xl border border-gray-100 p-8 transform -rotate-2 hover:rotate-0 transition-transform duration-300">

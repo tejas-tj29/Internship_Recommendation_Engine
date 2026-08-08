@@ -182,7 +182,7 @@ export default function InternshipDetails() {
           <div className="space-y-6">
             
             {/* AI Match Box */}
-            <div className="bg-gradient-to-br from-indigo-50 to-blue-50 rounded-xl shadow-sm border border-blue-100 p-6">
+            <div className="bg-linear-to-br from-indigo-50 to-blue-50 rounded-xl shadow-sm border border-blue-100 p-6">
               <div className="flex items-center justify-between mb-4">
                 <h3 className="text-lg font-bold text-gray-900 flex items-center">
                   <Sparkles className="text-blue-600 mr-2" size={20} /> AI Match Analysis

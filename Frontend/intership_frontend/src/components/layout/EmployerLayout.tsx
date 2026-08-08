@@ -19,7 +19,7 @@ export function EmployerLayout() {
   }
 
   return (
-    <div className="flex h-screen bg-[var(--background)]">
+    <div className="flex h-screen bg-(--background)">
       <EmployerSidebar />
       <main className="flex-1 overflow-y-auto">
         <div className="container py-8">

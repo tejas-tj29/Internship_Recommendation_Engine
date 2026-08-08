@@ -44,7 +44,7 @@ export default function Contact() {
     <div className="min-h-screen flex flex-col font-sans bg-gray-50">
       <PublicNavbar />
       
-      <main className="flex-grow">
+      <main className="grow">
         
         <section className="bg-blue-600 py-16">
           <div className="max-w-4xl mx-auto px-4 text-center">
@@ -79,7 +79,7 @@ export default function Contact() {
                 <form onSubmit={handleSubmit} className="space-y-6">
                   {status === 'error' && (
                     <div className="bg-red-50 text-red-700 p-4 rounded-lg flex items-start">
-                      <AlertCircle size={20} className="mr-3 mt-0.5 flex-shrink-0" />
+                      <AlertCircle size={20} className="mr-3 mt-0.5 shrink-0" />
                       <div>
                         <p className="font-bold">Error sending message</p>
                         <p className="text-sm mt-1">{errorMessage}</p>

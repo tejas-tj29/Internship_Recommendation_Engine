@@ -106,7 +106,7 @@ export default function Dashboard() {
 
         <div className="flex flex-col lg:flex-row gap-8">
           {/* Left Sidebar - Profile Summary */}
-          <div className="w-full lg:w-1/4 flex-shrink-0">
+          <div className="w-full lg:w-1/4 shrink-0">
             <div className="sticky top-24">
               {isLoading || !profile ? (
                 <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6 h-96 animate-pulse">

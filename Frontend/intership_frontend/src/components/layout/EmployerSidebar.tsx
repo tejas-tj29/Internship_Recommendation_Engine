@@ -30,12 +30,12 @@ export function EmployerSidebar() {
   return (
     <div className="w-64 h-screen border-r border-[hsl(var(--border))] glass flex flex-col sticky top-0 z-10 transition-colors">
       <div className="p-6">
-        <h2 className="text-xl font-bold tracking-tight text-[var(--primary)]">Employer Portal</h2>
+        <h2 className="text-xl font-bold tracking-tight text-(--primary)">Employer Portal</h2>
       </div>
 
       <div className="flex-1 overflow-y-auto py-4 flex flex-col gap-6">
         <div className="px-4">
-          <p className="px-4 text-xs font-semibold text-[var(--muted-foreground)] uppercase tracking-wider mb-2">Main</p>
+          <p className="px-4 text-xs font-semibold text-(--muted-foreground) uppercase tracking-wider mb-2">Main</p>
           <nav className="flex flex-col gap-1">
             <NavLink to="/employer/dashboard" className={navItemClass} end>
               <LayoutDashboard className="w-4 h-4" /> Dashboard
@@ -53,7 +53,7 @@ export function EmployerSidebar() {
         </div>
 
         <div className="px-4">
-          <p className="px-4 text-xs font-semibold text-[var(--muted-foreground)] uppercase tracking-wider mb-2">Management</p>
+          <p className="px-4 text-xs font-semibold text-(--muted-foreground) uppercase tracking-wider mb-2">Management</p>
           <nav className="flex flex-col gap-1">
             <NavLink to="/employer/profile" className={navItemClass}>
               <Building2 className="w-4 h-4" /> Company Profile
@@ -82,7 +82,7 @@ export function EmployerSidebar() {
           </button>
           <button 
             onClick={handleLogout}
-            className="flex items-center gap-3 px-4 py-2 rounded-md text-sm font-medium text-[var(--destructive)] hover:bg-[var(--destructive)] hover:text-white transition-colors text-left"
+            className="flex items-center gap-3 px-4 py-2 rounded-md text-sm font-medium text-[hsl(var(--destructive))] hover:bg-[hsl(var(--destructive))] hover:text-white transition-colors text-left"
           >
             <LogOut className="w-4 h-4" /> Logout
           </button>
