@@ -166,7 +166,7 @@ export function EditInternship() {
       } as any); // using 'as any' since updateInternship expects partial but structured data properly
       
       alert('Internship updated successfully.');
-      navigate(`/employer/internships/${id}`);
+      navigate(`/company/internships/${id}`);
     } catch (err) {
       console.error(err);
       alert('Failed to update internship');

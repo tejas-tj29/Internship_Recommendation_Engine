@@ -164,7 +164,7 @@ export function InternshipApplicants() {
                       <td>{getStatusBadge(application.status)}</td>
                       <td>
                         <div className="flex items-center justify-end gap-2">
-                          <Link to={`/employer/applicants/${applicant.id}?applicationId=${application.id}`} className="btn btn-outline btn-size-sm">
+                          <Link to={`/company/applicants/${applicant.id}?applicationId=${application.id}`} className="btn btn-outline btn-size-sm">
                             <Eye className="w-4 h-4 mr-1" /> View
                           </Link>
                           {application.status !== 'Shortlisted' && application.status !== 'Selected' && application.status !== 'Rejected' && (

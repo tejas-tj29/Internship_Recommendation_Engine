@@ -78,7 +78,7 @@ function App() {
               {/* === Employer Routes Wrapper (/company) === */}
               <Route path="/company">
                 {/* Redirect base /company to /company/dashboard */}
-                {/* <Route index element={<Navigate to="/company/dashboard" replace />} /> */}
+                <Route index element={<Navigate to="/company/dashboard" replace />} />
                 
                 {/* Employer Auth (Outside Layout) */}
                 <Route path="login" element={<EmployerLogin />} />

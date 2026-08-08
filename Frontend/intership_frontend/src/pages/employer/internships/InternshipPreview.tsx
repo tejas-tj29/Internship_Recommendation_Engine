@@ -35,7 +35,7 @@ export function InternshipPreview() {
     if (!internship) return;
     if (confirm('Are you sure you want to delete this internship? This cannot be undone.')) {
       await deleteInternship(internship.id);
-      navigate('/employer/internships');
+      navigate('/company/internships');
     }
   };
 
@@ -55,10 +55,10 @@ export function InternshipPreview() {
         
         {/* Employer Controls */}
         <div className="flex items-center gap-2">
-          <Link to={`/employer/internships/${internship.id}/applicants`} className="btn btn-default">
+          <Link to={`/company/internships/${internship.id}/applicants`} className="btn btn-default">
             <Users className="w-4 h-4 mr-2" /> View Applicants ({internship.stats.applications})
           </Link>
-          <Link to={`/employer/internships/${internship.id}/edit`} className="btn btn-outline">
+          <Link to={`/company/internships/${internship.id}/edit`} className="btn btn-outline">
             <Edit className="w-4 h-4 mr-2" /> Edit
           </Link>
           <Button variant="outline" onClick={handleStatusToggle}>

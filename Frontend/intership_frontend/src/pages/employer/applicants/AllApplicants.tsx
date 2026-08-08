@@ -107,7 +107,7 @@ export function AllApplicants() {
                         <div className="text-xs text-[var(--muted-foreground)]">{applicant.college}</div>
                       </td>
                       <td>
-                        <Link to={`/employer/internships/${internship.id}`} className="font-medium text-[var(--primary)] hover:underline">
+                        <Link to={`/company/internships/${internship.id}`} className="font-medium text-[var(--primary)] hover:underline">
                           {internship.title}
                         </Link>
                         <div className="text-xs text-[var(--muted-foreground)]">{internship.sector}</div>
@@ -127,7 +127,7 @@ export function AllApplicants() {
                       <td>{getStatusBadge(application.status)}</td>
                       <td>
                         <div className="flex items-center justify-end gap-2">
-                          <Link to={`/employer/applicants/${applicant.id}?applicationId=${application.id}`} className="btn btn-outline btn-size-sm">
+                          <Link to={`/company/applicants/${applicant.id}?applicationId=${application.id}`} className="btn btn-outline btn-size-sm">
                             <Eye className="w-4 h-4 mr-1" /> View
                           </Link>
                           {application.status !== 'Shortlisted' && application.status !== 'Selected' && application.status !== 'Rejected' && (

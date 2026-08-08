@@ -15,7 +15,7 @@ export function EmployerLayout() {
   if (isAuthenticated === null) return <div>Loading...</div>;
 
   if (!isAuthenticated) {
-    return <Navigate to="/employer/login" replace />;
+    return <Navigate to="/company/login" replace />;
   }
 
   return (

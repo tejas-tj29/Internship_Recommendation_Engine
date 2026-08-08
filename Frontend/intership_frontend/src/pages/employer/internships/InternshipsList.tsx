@@ -50,7 +50,7 @@ export function InternshipsList() {
           <h1 className="text-3xl font-bold tracking-tight">Internships</h1>
           <p className="text-[var(--muted-foreground)] mt-2">Manage your internship postings and track performance.</p>
         </div>
-        <Link to="/employer/internships/new" className="btn btn-default flex items-center gap-2">
+        <Link to="/company/internships/create" className="btn btn-default flex items-center gap-2">
           <PlusCircle className="w-4 h-4" /> Post Internship
         </Link>
       </div>
@@ -73,7 +73,7 @@ export function InternshipsList() {
                 {internships.length === 0 ? (
                   <tr>
                     <td colSpan={6} className="text-center py-8 text-[var(--muted-foreground)]">
-                      No internships posted yet. <Link to="/employer/internships/new" className="text-[var(--primary)] hover:underline">Post your first internship</Link>.
+                      No internships posted yet. <Link to="/company/internships/create" className="text-[var(--primary)] hover:underline">Post your first internship</Link>.
                     </td>
                   </tr>
                 ) : (
@@ -95,10 +95,10 @@ export function InternshipsList() {
                       <td>{new Date(internship.applicationDeadline).toLocaleDateString()}</td>
                       <td>
                         <div className="flex items-center justify-end gap-2">
-                          <Link to={`/employer/internships/${internship.id}/applicants`} className="btn btn-ghost btn-size-sm text-[var(--primary)]" title="View Applicants">
+                          <Link to={`/company/internships/${internship.id}/applicants`} className="btn btn-ghost btn-size-sm text-[var(--primary)]" title="View Applicants">
                             <Users className="w-4 h-4" />
                           </Link>
-                          <Link to={`/employer/internships/${internship.id}`} className="btn btn-ghost btn-size-sm" title="Preview">
+                          <Link to={`/company/internships/${internship.id}`} className="btn btn-ghost btn-size-sm" title="Preview">
                             <Eye className="w-4 h-4" />
                           </Link>
                           <Button 
