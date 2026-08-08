@@ -52,7 +52,7 @@ export function EmployerRegister() {
         address: { country, state, city, addressLine, pinCode }
       });
       // After registration, usually redirect to profile setup or dashboard
-      navigate('/employer/profile');
+      navigate('/company/profile');
     } catch (err: any) {
       setError(err.message || 'Failed to register');
     } finally {
@@ -187,7 +187,7 @@ export function EmployerRegister() {
         </CardContent>
         <CardFooter className="flex flex-col items-center justify-center gap-2 border-t border-[var(--border)] pt-4">
           <div className="text-sm text-[var(--muted-foreground)]">
-            Already have an account? <Link to="/employer/login" className="text-[var(--primary)] font-medium hover:underline">Login here</Link>
+            Already have an account? <Link to="/company/login" className="text-[var(--primary)] font-medium hover:underline">Login here</Link>
           </div>
         </CardFooter>
       </Card>

@@ -140,7 +140,7 @@ export function CreateInternship() {
       });
       
       alert('Internship published successfully.');
-      navigate('/employer/internships');
+      navigate('/company/internships');
     } catch (err) {
       console.error(err);
       alert('Failed to create internship');

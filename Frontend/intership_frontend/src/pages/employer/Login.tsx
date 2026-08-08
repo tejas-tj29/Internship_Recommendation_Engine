@@ -31,7 +31,7 @@ export function EmployerLogin() {
     setError('');
     try {
       await loginEmployer(data.email, data.password);
-      navigate('/employer/dashboard');
+      navigate('/company/dashboard');
     } catch (err: any) {
       setError(err.message || 'Failed to login');
     } finally {
@@ -82,7 +82,7 @@ export function EmployerLogin() {
         </CardContent>
         <CardFooter className="flex flex-col items-center justify-center gap-2 border-t border-[var(--border)] pt-4">
           <div className="text-sm text-[var(--muted-foreground)]">
-            Don't have an account? <Link to="/employer/register" className="text-[var(--primary)] font-medium hover:underline">Create Employer Account</Link>
+            Don't have an account? <Link to="/company/register" className="text-[var(--primary)] font-medium hover:underline">Create Employer Account</Link>
           </div>
         </CardFooter>
       </Card>

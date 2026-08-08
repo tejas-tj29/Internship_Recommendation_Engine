@@ -19,7 +19,7 @@ export function EmployerSidebar() {
 
   const handleLogout = async () => {
     await logoutEmployer();
-    navigate('/employer/login');
+    navigate('/company/login');
   };
 
   const navItemClass = ({ isActive }: { isActive: boolean }) => cn(
@@ -37,16 +37,16 @@ export function EmployerSidebar() {
         <div className="px-4">
           <p className="px-4 text-xs font-semibold text-(--muted-foreground) uppercase tracking-wider mb-2">Main</p>
           <nav className="flex flex-col gap-1">
-            <NavLink to="/employer/dashboard" className={navItemClass} end>
+            <NavLink to="/company/dashboard" className={navItemClass} end>
               <LayoutDashboard className="w-4 h-4" /> Dashboard
             </NavLink>
-            <NavLink to="/employer/internships" className={navItemClass}>
+            <NavLink to="/company/internships" className={navItemClass}>
               <Briefcase className="w-4 h-4" /> Internships
             </NavLink>
-            <NavLink to="/employer/applicants" className={navItemClass}>
+            <NavLink to="/company/applicants" className={navItemClass}>
               <Users className="w-4 h-4" /> Applicants
             </NavLink>
-            <NavLink to="/employer/analytics" className={navItemClass}>
+            <NavLink to="/company/analytics" className={navItemClass}>
               <BarChart3 className="w-4 h-4" /> Analytics
             </NavLink>
           </nav>
@@ -55,17 +55,17 @@ export function EmployerSidebar() {
         <div className="px-4">
           <p className="px-4 text-xs font-semibold text-(--muted-foreground) uppercase tracking-wider mb-2">Management</p>
           <nav className="flex flex-col gap-1">
-            <NavLink to="/employer/profile" className={navItemClass}>
+            <NavLink to="/company/profile" className={navItemClass}>
               <Building2 className="w-4 h-4" /> Company Profile
             </NavLink>
-            <NavLink to="/employer/settings" className={navItemClass}>
+            <NavLink to="/company/settings" className={navItemClass}>
               <Settings className="w-4 h-4" /> Settings
             </NavLink>
           </nav>
         </div>
 
         <div className="px-4 mt-4">
-          <NavLink to="/employer/internships/new" className="flex items-center justify-center gap-2 w-full btn btn-default">
+          <NavLink to="/company/internships/create" className="flex items-center justify-center gap-2 w-full btn btn-default">
             <PlusCircle className="w-4 h-4" /> Post Internship
           </NavLink>
         </div>
