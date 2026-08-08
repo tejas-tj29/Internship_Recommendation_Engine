@@ -20,7 +20,6 @@ import InternshipDetails from './pages/InternshipDetails';
 
 import { DashboardLayout } from './components/layout/DashboardLayout';
 import SavedInternships from './pages/SavedInternships';
-import Applications from './pages/Applications';
 import RequireAuth from './components/RequireAuth';
 
 const queryClient = new QueryClient();
@@ -57,7 +56,6 @@ function App() {
               <Route path="/dashboard" element={<Dashboard />} />
               <Route path="/dashboard/internship/:id" element={<InternshipDetails />} />
               <Route path="/saved-internships" element={<SavedInternships />} />
-              <Route path="/applications" element={<Applications />} />
             </Route>
 
           </Routes>
