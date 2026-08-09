@@ -178,23 +178,36 @@ export function EditInternship() {
   if (isLoading) return <div>Loading...</div>;
 
   return (
-    <div className="max-w-4xl mx-auto space-y-6">
-      <div>
-        <h1 className="text-3xl font-bold tracking-tight">Edit Internship</h1>
-        <p className="text-[var(--muted-foreground)] mt-2">Step {step} of 6: {steps.find(s => s.id === step)?.title}</p>
+    <div className="max-w-4xl mx-auto space-y-8 pb-12">
+      {/* Header Section */}
+      <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-4 bg-white/60 backdrop-blur-xl p-8 rounded-3xl border border-gray-100/60 shadow-sm relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-indigo-100/40 to-purple-100/40 rounded-full blur-3xl -z-10 translate-x-1/2 -translate-y-1/2"></div>
         
-        {/* Progress bar */}
-        <div className="w-full bg-[var(--secondary)] h-2 mt-4 rounded-full overflow-hidden">
-          <div 
-            className="bg-[var(--primary)] h-full transition-all duration-300"
-            style={{ width: `${(step / 6) * 100}%` }}
-          />
+        <div className="w-full flex flex-col md:flex-row justify-between items-center gap-6">
+          <div>
+            <h1 className="text-4xl font-extrabold tracking-tight text-gray-900 mb-2">
+              Edit Internship
+            </h1>
+            <p className="text-gray-600 font-medium text-lg">
+              Step {step} of 6: <span className="text-indigo-600 font-bold">{steps.find(s => s.id === step)?.title}</span>
+            </p>
+          </div>
+          
+          <div className="w-full md:w-1/2">
+            {/* Progress bar */}
+            <div className="w-full bg-gray-100 h-3 mt-2 md:mt-0 rounded-full overflow-hidden shadow-inner">
+              <div 
+                className="bg-gradient-to-r from-blue-500 to-indigo-600 h-full transition-all duration-500 ease-out rounded-full"
+                style={{ width: `${(step / 6) * 100}%` }}
+              />
+            </div>
+          </div>
         </div>
       </div>
 
-      <Card>
-        <CardContent className="pt-6">
-          <form id="internship-form" onSubmit={handleSubmit(onSubmit as any)} className="space-y-6">
+      <Card className="bg-white/80 backdrop-blur-xl border-gray-100 shadow-xl rounded-3xl overflow-hidden animate-slide-up" style={{ animationDelay: '0.1s' }}>
+        <CardContent className="p-8 md:p-10">
+          <form id="internship-form" onSubmit={handleSubmit(onSubmit as any)} className="space-y-8">
             
             {step === 1 && (
               <div className="space-y-4">
@@ -213,14 +226,14 @@ export function EditInternship() {
                   </div>
                   <div className="space-y-2">
                     <Label>Internship Type</Label>
-                    <select className="input" {...register('type')}>
+                    <select className="flex h-11 w-full rounded-xl border border-gray-200 bg-gray-50/50 px-3 py-2 text-sm ring-offset-background transition-colors focus:bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2" {...register('type')}>
                       <option value="Full-time">Full-time</option>
                       <option value="Part-time">Part-time</option>
                       <option value="Remote">Remote</option>
                       <option value="Hybrid">Hybrid</option>
                       <option value="On-site">On-site</option>
                     </select>
-                    {errors.type && <span className="text-[var(--destructive)] text-sm">{errors.type.message}</span>}
+                    {errors.type && <span className="text-red-500 font-medium text-sm">{errors.type.message}</span>}
                   </div>
                   <div className="space-y-2">
                     <Label>Number of Positions</Label>
@@ -269,7 +282,7 @@ export function EditInternship() {
                       name="courses"
                       control={control}
                       render={({ field }) => (
-                        <TagInput tags={field.value} onChange={field.onChange} placeholder="Add course and press enter" error={errors.courses?.message} />
+                        <TagInput value={field.value || []} onChange={field.onChange} placeholder="Add course and press enter" error={errors.courses?.message} />
                       )}
                     />
                   </div>
@@ -280,7 +293,7 @@ export function EditInternship() {
                       name="eligibleYears"
                       control={control}
                       render={({ field }) => (
-                        <TagInput tags={field.value} onChange={field.onChange} placeholder="e.g. 3rd Year" error={errors.eligibleYears?.message} />
+                        <TagInput value={field.value || []} onChange={field.onChange} placeholder="e.g. 3rd Year" error={errors.eligibleYears?.message} />
                       )}
                     />
                   </div>
@@ -300,7 +313,7 @@ export function EditInternship() {
                       name="requiredSkills"
                       control={control}
                       render={({ field }) => (
-                        <TagInput tags={field.value} onChange={field.onChange} placeholder="Add skill" error={errors.requiredSkills?.message} />
+                        <TagInput value={field.value || []} onChange={field.onChange} placeholder="Add skill" error={errors.requiredSkills?.message} />
                       )}
                     />
                   </div>
@@ -311,7 +324,7 @@ export function EditInternship() {
                       name="preferredSkills"
                       control={control}
                       render={({ field }) => (
-                        <TagInput tags={field.value || []} onChange={field.onChange} placeholder="Add skill" />
+                        <TagInput value={field.value || []} onChange={field.onChange} placeholder="Add skill" />
                       )}
                     />
                   </div>
@@ -365,7 +378,7 @@ export function EditInternship() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div className="space-y-2">
                     <Label>Stipend Type</Label>
-                    <select className="input" {...register('stipendType')}>
+                    <select className="flex h-11 w-full rounded-xl border border-gray-200 bg-gray-50/50 px-3 py-2 text-sm ring-offset-background transition-colors focus:bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2" {...register('stipendType')}>
                       <option value="Paid">Paid</option>
                       <option value="Unpaid">Unpaid</option>
                       <option value="Performance Based">Performance Based</option>
@@ -418,15 +431,15 @@ export function EditInternship() {
             )}
           </form>
         </CardContent>
-        <CardFooter className="flex justify-between border-t border-[var(--border)] pt-4">
-          <Button type="button" variant="outline" onClick={prevStep} disabled={step === 1}>
+        <CardFooter className="flex justify-between border-t border-gray-100 bg-gray-50/50 p-8">
+          <Button type="button" variant="outline" onClick={prevStep} disabled={step === 1} className="rounded-xl px-6 font-bold h-12">
             Back
           </Button>
           
           {step < 6 ? (
-            <Button type="button" onClick={nextStep}>Next Step</Button>
+            <Button type="button" onClick={nextStep} className="rounded-xl px-8 font-bold bg-indigo-600 hover:bg-indigo-700 shadow-lg shadow-indigo-500/30 transition-all hover:-translate-y-0.5 h-12 text-white">Next Step</Button>
           ) : (
-            <Button type="submit" form="internship-form" disabled={isSubmitting}>
+            <Button type="submit" form="internship-form" disabled={isSubmitting} className="rounded-xl px-8 font-bold bg-green-600 hover:bg-green-700 shadow-lg shadow-green-500/30 transition-all hover:-translate-y-0.5 h-12 text-white">
               {isSubmitting ? 'Saving...' : 'Save Changes'}
             </Button>
           )}

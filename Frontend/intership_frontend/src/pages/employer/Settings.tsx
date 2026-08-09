@@ -3,6 +3,7 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter }
 import { Input } from '../../components/ui/Input';
 import { Label } from '../../components/ui/Label';
 import { Button } from '../../components/ui/Button';
+import { Settings, Shield, Bell, Trash2, CheckCircle2 } from 'lucide-react';
 
 export function EmployerSettings() {
   const [isLoading, setIsLoading] = useState(false);
@@ -22,77 +23,100 @@ export function EmployerSettings() {
   };
 
   return (
-    <div className="max-w-4xl mx-auto space-y-6">
-      <div>
-        <h1 className="text-3xl font-bold tracking-tight">Settings</h1>
-        <p className="text-[var(--muted-foreground)] mt-2">Manage your account preferences and notifications.</p>
+    <div className="max-w-4xl mx-auto space-y-10 pb-12">
+      {/* Header Section */}
+      <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-4 bg-white/60 backdrop-blur-xl p-8 rounded-3xl border border-gray-100/60 shadow-sm relative overflow-hidden">
+        {/* Decorative elements */}
+        <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-gray-100/40 to-slate-200/40 rounded-full blur-3xl -z-10 translate-x-1/2 -translate-y-1/2"></div>
+        
+        <div>
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-gray-100 border border-gray-200 text-gray-700 font-semibold text-xs uppercase tracking-wider mb-4 shadow-sm backdrop-blur-sm">
+            <Settings size={14} /> Preferences
+          </div>
+          <h1 className="text-4xl font-extrabold tracking-tight text-gray-900 mb-2">
+            Settings
+          </h1>
+          <p className="text-gray-600 font-medium text-lg max-w-xl">
+            Manage your account preferences and notifications.
+          </p>
+        </div>
       </div>
 
-      <div className="grid grid-cols-1 gap-6">
-        <Card>
-          <CardHeader>
-            <CardTitle>Account Details</CardTitle>
-            <CardDescription>Update your email or password.</CardDescription>
+      <div className="grid grid-cols-1 gap-8 animate-slide-up" style={{ animationDelay: '0.1s' }}>
+        <Card className="bg-white/80 backdrop-blur-xl border-gray-100 shadow-xl rounded-3xl overflow-hidden">
+          <CardHeader className="bg-gradient-to-r from-blue-50/50 to-transparent border-b border-gray-100 p-8 flex flex-row items-center gap-3">
+             <div className="p-2.5 bg-blue-100 text-blue-600 rounded-xl shadow-sm">
+              <Shield className="h-5 w-5" />
+            </div>
+            <div>
+              <CardTitle className="text-2xl font-extrabold text-gray-900">Account Details</CardTitle>
+              <CardDescription className="text-base font-medium mt-1">Update your email or password.</CardDescription>
+            </div>
           </CardHeader>
-          <CardContent>
-            <form id="account-form" onSubmit={handleSave} className="space-y-4">
-              <div className="space-y-2 max-w-md">
-                <Label htmlFor="email">Email Address</Label>
-                <Input id="email" type="email" defaultValue="hr@technova.com" />
+          <CardContent className="p-8">
+            <form id="account-form" onSubmit={handleSave} className="space-y-6">
+              <div className="space-y-3 max-w-md">
+                <Label htmlFor="email" className="text-gray-700 font-bold">Email Address</Label>
+                <Input id="email" type="email" defaultValue="hr@technova.com" className="bg-gray-50/50 border-gray-200 focus:bg-white transition-colors rounded-xl h-11" />
               </div>
-              <div className="space-y-2 max-w-md">
-                <Label htmlFor="password">New Password</Label>
-                <Input id="password" type="password" placeholder="••••••••" />
+              <div className="space-y-3 max-w-md">
+                <Label htmlFor="password" className="text-gray-700 font-bold">New Password</Label>
+                <Input id="password" type="password" placeholder="••••••••" className="bg-gray-50/50 border-gray-200 focus:bg-white transition-colors rounded-xl h-11" />
               </div>
             </form>
           </CardContent>
-          <CardFooter className="border-t border-[var(--border)] pt-4 flex gap-4 items-center">
-            <Button type="submit" form="account-form" disabled={isLoading}>
+          <CardFooter className="bg-gray-50/50 border-t border-gray-100 p-8 flex gap-4 items-center">
+            <Button type="submit" form="account-form" disabled={isLoading} className="rounded-xl px-8 py-2.5 font-bold bg-blue-600 hover:bg-blue-700 shadow-lg shadow-blue-500/30 transition-all hover:-translate-y-0.5">
               {isLoading ? 'Saving...' : 'Update Account'}
             </Button>
-            {saved && <span className="text-sm text-[var(--success)]">Saved successfully!</span>}
+            {saved && <span className="text-sm font-bold text-green-600 flex items-center gap-1 animate-in fade-in slide-in-from-left-2"><CheckCircle2 size={16} /> Saved successfully!</span>}
           </CardFooter>
         </Card>
 
-        <Card>
-          <CardHeader>
-            <CardTitle>Notifications</CardTitle>
-            <CardDescription>Configure how you receive alerts.</CardDescription>
+        <Card className="bg-white/80 backdrop-blur-xl border-gray-100 shadow-xl rounded-3xl overflow-hidden">
+          <CardHeader className="bg-gradient-to-r from-amber-50/50 to-transparent border-b border-gray-100 p-8 flex flex-row items-center gap-3">
+             <div className="p-2.5 bg-amber-100 text-amber-600 rounded-xl shadow-sm">
+              <Bell className="h-5 w-5" />
+            </div>
+            <div>
+              <CardTitle className="text-2xl font-extrabold text-gray-900">Notifications</CardTitle>
+              <CardDescription className="text-base font-medium mt-1">Configure how you receive alerts.</CardDescription>
+            </div>
           </CardHeader>
-          <CardContent className="space-y-4">
-            <div className="flex items-center justify-between border-b border-[var(--border)] pb-4">
+          <CardContent className="p-8 space-y-6">
+            <div className="flex items-center justify-between border-b border-gray-100 pb-6">
               <div>
-                <p className="font-medium">New Applications</p>
-                <p className="text-sm text-[var(--muted-foreground)]">Receive an email when a student applies.</p>
+                <p className="font-bold text-gray-900 text-lg">New Applications</p>
+                <p className="text-sm font-medium text-gray-500 mt-1">Receive an email when a student applies.</p>
               </div>
-              <input type="checkbox" className="w-5 h-5 rounded border-[var(--input)] text-[var(--primary)] focus:ring-[var(--primary)]" defaultChecked />
+              <input type="checkbox" className="w-6 h-6 rounded-md border-gray-300 text-blue-600 focus:ring-blue-600 cursor-pointer" defaultChecked />
             </div>
             
-            <div className="flex items-center justify-between border-b border-[var(--border)] pb-4">
+            <div className="flex items-center justify-between border-b border-gray-100 pb-6">
               <div>
-                <p className="font-medium">Daily Summary</p>
-                <p className="text-sm text-[var(--muted-foreground)]">Receive a daily digest of new applicants.</p>
+                <p className="font-bold text-gray-900 text-lg">Daily Summary</p>
+                <p className="text-sm font-medium text-gray-500 mt-1">Receive a daily digest of new applicants.</p>
               </div>
-              <input type="checkbox" className="w-5 h-5 rounded border-[var(--input)] text-[var(--primary)] focus:ring-[var(--primary)]" />
+              <input type="checkbox" className="w-6 h-6 rounded-md border-gray-300 text-blue-600 focus:ring-blue-600 cursor-pointer" />
             </div>
             
             <div className="flex items-center justify-between">
               <div>
-                <p className="font-medium">Platform Updates</p>
-                <p className="text-sm text-[var(--muted-foreground)]">Receive news and updates about PM Internship Scheme.</p>
+                <p className="font-bold text-gray-900 text-lg">Platform Updates</p>
+                <p className="text-sm font-medium text-gray-500 mt-1">Receive news and updates about PM Internship Scheme.</p>
               </div>
-              <input type="checkbox" className="w-5 h-5 rounded border-[var(--input)] text-[var(--primary)] focus:ring-[var(--primary)]" defaultChecked />
+              <input type="checkbox" className="w-6 h-6 rounded-md border-gray-300 text-blue-600 focus:ring-blue-600 cursor-pointer" defaultChecked />
             </div>
           </CardContent>
         </Card>
 
-        <Card>
-          <CardHeader>
-            <CardTitle className="text-[var(--destructive)]">Danger Zone</CardTitle>
+        <Card className="bg-red-50/50 border-red-100 shadow-sm rounded-3xl overflow-hidden">
+          <CardHeader className="p-8 pb-4">
+            <CardTitle className="text-xl font-extrabold text-red-600 flex items-center gap-2"><Trash2 size={20} /> Danger Zone</CardTitle>
           </CardHeader>
-          <CardContent>
-            <p className="text-sm mb-4">Once you delete your account, there is no going back. Please be certain.</p>
-            <Button variant="destructive">Delete Account</Button>
+          <CardContent className="p-8 pt-0">
+            <p className="text-sm font-medium text-red-800/80 mb-6">Once you delete your account, there is no going back. Please be certain.</p>
+            <Button variant="destructive" className="rounded-xl px-6 font-bold shadow-md shadow-red-500/20 hover:bg-red-700 transition-colors">Delete Account</Button>
           </CardContent>
         </Card>
       </div>
