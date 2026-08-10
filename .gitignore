@@ -492,3 +492,4 @@ poetry.toml
 # LSP config files
 pyrightconfig.json
 
+*.code-workspace
