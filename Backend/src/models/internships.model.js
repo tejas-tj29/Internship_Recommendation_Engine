@@ -20,7 +20,7 @@ const internshipSchema = new mongoose.Schema(
     description: {
       type: String,
       required: true,
-      trim: true 
+      trim: true
     },
     location: {
       type: String,
@@ -30,12 +30,12 @@ const internshipSchema = new mongoose.Schema(
     duration: {
       type: Number,
       required: true,
-      enum: [2, 9] 
+      enum: [2, 9]
     },
     stipend: {
       type: Number,
       required: true,
-      default: 9000 
+      default: 9000
     },
     required_education: {
       type: String,
@@ -51,15 +51,13 @@ const internshipSchema = new mongoose.Schema(
       required: true,
       min: 1
     },
-    
-    
     descriptionVector: {
       type: [Number],
-      select: false 
+      select: false
     }
   },
   {
-    timestamps: true 
+    timestamps: true
   }
 );
 

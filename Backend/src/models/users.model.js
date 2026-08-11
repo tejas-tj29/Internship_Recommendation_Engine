@@ -19,11 +19,8 @@ const userSchema = new mongoose.Schema(
       type: String,
       required: true
     },
-
-    
     age: {
       type: Number,
-      
     },
     location: {
       type: String,
@@ -35,7 +32,6 @@ const userSchema = new mongoose.Schema(
     },
     education: {
       type: String,
-      
       enum: ['10th', '12th', 'ITI', 'Diploma', 'Bachelor', 'Master']
     },
     degree: {
@@ -50,16 +46,13 @@ const userSchema = new mongoose.Schema(
       type: [String],
       default: []
     },
-
-   
     skillsVector: {
       type: [Number],
-      select: false 
-      
+      select: false
     }
   },
   {
-    timestamps: true 
+    timestamps: true
   }
 );
 
